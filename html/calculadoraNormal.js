@@ -10,6 +10,12 @@ operacio="no";
 
 
 function numero(num2) {
+  if(x.length >= 5){
+    alert("no pot haber tants operants");
+    esborratTotal();
+  }
+
+
          if (x=="0" || numPantalla==1  ) {
             pantalla.innerHTML=num2;
             x=num2;
@@ -42,6 +48,9 @@ function operar(tipusOperacio) {
            numPantalla=1;
          }
 function igual() {
+        if(x == 0){
+          alert("has posat algun operant que no te valor");
+        }
          if (operacio=="no") {
               pantalla.innerHTML=x;
             }
@@ -89,9 +98,9 @@ function esborratTotal() {
            operacio="no"
        }
 function data(){
-         var d = new Date();
+                var d = new Date();
 
-       alert("Avui es: "+d.getDate() +" dia "+ d.getDay()+ " del mes de " +d.getMonth()
-         +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
-          + ":" +d.getSeconds());
-      }
+              alert("Avui es dia "+ d.getDate()+ " del mes de " + (d.getMonth() +1)
+                +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
+                 + ":" +d.getSeconds());
+}

@@ -10,14 +10,27 @@ operacio="no";
 
 
 function numero(num2) {
+
+  if(x.length >= 5){
+    alert("no pot haber tants operants");
+    esborratTotal();
+  }
+
+
+
+
          if (x=="0" || numPantalla==1  ) {
+
+
             pantalla.innerHTML=num2;
             x=num2;
             if (num2==".") {
                pantalla.innerHTML="0.";
                x=num2; //
                coma=1;
-               }
+            }
+
+
            }
            else {
                if (num2=="." && coma==0) {
@@ -36,15 +49,20 @@ function numero(num2) {
             numPantalla=0
          }
 function operar(tipusOperacio) {
+
            igual()
            numEspera=x
            operacio=tipusOperacio;
            numPantalla=1;
          }
 function igual() {
+        if(x == 0){
+          alert("has posat algun operant que no te valor");
+        }
          if (operacio=="no") {
               pantalla.innerHTML=x;
-            }
+
+          }
          else {
                 cadenaSolucio=numEspera+operacio+x;
                 solucio=eval(cadenaSolucio)
@@ -114,7 +132,7 @@ function esborratTotal() {
 function data(){
          var d = new Date();
 
-       alert("Avui es: "+d.getDate() +" dia "+ d.getDay()+ " del mes de " +d.getMonth()
+       alert("Avui es dia "+ d.getDate()+ " del mes de " + (d.getMonth() +1)
          +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
           + ":" +d.getSeconds());
       }
