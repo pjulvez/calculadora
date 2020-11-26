@@ -1,5 +1,5 @@
 window.onload = function(){ //Acciones tras cargar la página
-pantalla=document.getElementById("textoPantalla");
+  pantalla=document.getElementById("textoPantalla");
  //elemento pantalla de salida
 }
 x="0"; //número en pantalla
@@ -36,10 +36,10 @@ function numero(xx) { //recoge el número pulsado en el argumento.
             xi=0 //el número está iniciado y podemos ampliarlo.
          }
 function operar(s) {
-         igualar() //si hay operaciones pendientes se realizan primero
-         ni=x //ponemos el 1º número en "numero en espera" para poder escribir el segundo.
-         op=s; //guardamos tipo de operación.
-         xi=1; //inicializar pantalla.
+           igualar() //si hay operaciones pendientes se realizan primero
+           ni=x //ponemos el 1º número en "numero en espera" para poder escribir el segundo.
+           op=s; //guardamos tipo de operación.
+           xi=1; //inicializar pantalla.
          }
 function igualar() {
          if (op=="no") { //no hay ninguna operación pendiente.
@@ -59,25 +59,25 @@ function raizc() {
          pantalla.innerHTML=x; //mostrar en pantalla resultado
          op="no"; //quitar operaciones pendientes.
          xi=1; //se puede reiniciar la pantalla
-         }
+       }
 function sin() {
-                  x=Math.sin(x) //resolver raíz cuadrada.
-                  pantalla.innerHTML=x; //mostrar en pantalla resultado
-                  op="no"; //quitar operaciones pendientes.
-                  xi=1; //se puede reiniciar la pantalla
-                  }
+          x=Math.sin(x) //resolver raíz cuadrada.
+          pantalla.innerHTML=x; //mostrar en pantalla resultado
+          op="no"; //quitar operaciones pendientes.
+          xi=1; //se puede reiniciar la pantalla
+        }
 function cos() {
               x=Math.cos(x) //resolver raíz cuadrada.
               pantalla.innerHTML=x; //mostrar en pantalla resultado
               op="no"; //quitar operaciones pendientes.
               xi=1; //se puede reiniciar la pantalla
-}
+            }
 function exp() {
               x=Math.exp(x) //resolver raíz cuadrada.
               pantalla.innerHTML=x; //mostrar en pantalla resultado
               op="no"; //quitar operaciones pendientes.
                                     xi=1; //se puede reiniciar la pantalla
-}
+          }
 function porcent() {
            x=x/100 //dividir por 100 el número
            pantalla.innerHTML=x; //mostrar en pantalla
@@ -108,21 +108,21 @@ function retro(){ //Borrar sólo el último número escrito.
            pantalla.innerHTML=x; //mostrar resultado en pantalla
          }
 function borradoParcial() {
-        pantalla.innerHTML=0; //Borrado de pantalla;
-        x=0; //Borrado indicador número pantalla.
-        coma=0;	//reiniciamos también la coma
+          pantalla.innerHTML=0; //Borrado de pantalla;
+          x=0; //Borrado indicador número pantalla.
+          coma=0;	//reiniciamos también la coma
         }
 function borradoTotal() {
-         pantalla.innerHTML=0; //poner pantalla a 0
-         x="0"; //reiniciar número en pantalla
-         coma=0; //reiniciar estado coma decimal
-         ni=0 //indicador de número oculto a 0;
-         op="no" //borrar operación en curso.
+           pantalla.innerHTML=0; //poner pantalla a 0
+           x="0"; //reiniciar número en pantalla
+           coma=0; //reiniciar estado coma decimal
+           ni=0 //indicador de número oculto a 0;
+           op="no" //borrar operación en curso.
        }
 function data(){
-       var d = new Date();
+         var d = new Date();
 
-     alert("Avui es: "+d.getDate() +" dia "+ d.getDay()+ " del mes de " +d.getMonth()
-       +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
-        + ":" +d.getSeconds());
-}
+       alert("Avui es: "+d.getDate() +" dia "+ d.getDay()+ " del mes de " +d.getMonth()
+         +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
+          + ":" +d.getSeconds());
+      }
