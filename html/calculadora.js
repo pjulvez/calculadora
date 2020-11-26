@@ -1,5 +1,6 @@
 window.onload = function(){ //Acciones tras cargar la página
-pantalla=document.getElementById("textoPantalla"); //elemento pantalla de salida
+pantalla=document.getElementById("textoPantalla");
+ //elemento pantalla de salida
 }
 x="0"; //número en pantalla
 xi=1; //iniciar número en pantalla: 1=si; 0=no;
@@ -59,33 +60,52 @@ function raizc() {
          op="no"; //quitar operaciones pendientes.
          xi=1; //se puede reiniciar la pantalla
          }
+function sin() {
+                  x=Math.sin(x) //resolver raíz cuadrada.
+                  pantalla.innerHTML=x; //mostrar en pantalla resultado
+                  op="no"; //quitar operaciones pendientes.
+                  xi=1; //se puede reiniciar la pantalla
+                  }
+function cos() {
+              x=Math.cos(x) //resolver raíz cuadrada.
+              pantalla.innerHTML=x; //mostrar en pantalla resultado
+              op="no"; //quitar operaciones pendientes.
+              xi=1; //se puede reiniciar la pantalla
+}
+function exp() {
+              x=Math.exp(x) //resolver raíz cuadrada.
+              pantalla.innerHTML=x; //mostrar en pantalla resultado
+              op="no"; //quitar operaciones pendientes.
+                                    xi=1; //se puede reiniciar la pantalla
+}
 function porcent() {
-         x=x/100 //dividir por 100 el número
-         pantalla.innerHTML=x; //mostrar en pantalla
-         igualar() //resolver y mostrar operaciones pendientes
-         xi=1 //reiniciar la pantalla
+           x=x/100 //dividir por 100 el número
+           pantalla.innerHTML=x; //mostrar en pantalla
+           igualar() //resolver y mostrar operaciones pendientes
+           xi=1 //reiniciar la pantalla
          }
 function opuest() {
-         nx=Number(x); //convertir en número
-         nx=-nx; //cambiar de signo
-         x=String(nx); //volver a convertir a cadena
-         pantalla.innerHTML=x; //mostrar en pantalla.
+           nx=Number(x); //convertir en número
+           nx=-nx; //cambiar de signo
+           x=String(nx); //volver a convertir a cadena
+           pantalla.innerHTML=x; //mostrar en pantalla.
          }
-function inve() {
-         nx=Number(x);
-         nx=(1/nx);
-         x=String(nx);
-         pantalla.innerHTML=x;
-         xi=1; //reiniciar pantalla al pulsar otro número.
-         }
+/*function inve() {
+           nx=Number(x);
+           nx=(1/nx);
+           x=String(nx);
+           pantalla.innerHTML=x;
+           xi=1; //reiniciar pantalla al pulsar otro número.
+         }*/
+
 
 function retro(){ //Borrar sólo el último número escrito.
-         cifras=x.length; //hayar número de caracteres en pantalla
-         br=x.substr(cifras-1,cifras) //describir último caracter
-         x=x.substr(0,cifras-1) //quitar el ultimo caracter
-         if (x=="") {x="0";} //si ya no quedan caracteres, pondremos el 0
-         if (br==".") {coma=0;} //Si el caracter quitado es la coma, se permite escribirla de nuevo.
-         pantalla.innerHTML=x; //mostrar resultado en pantalla
+           cifras=x.length; //hayar número de caracteres en pantalla
+           br=x.substr(cifras-1,cifras) //describir último caracter
+           x=x.substr(0,cifras-1) //quitar el ultimo caracter
+           if (x=="") {x="0";} //si ya no quedan caracteres, pondremos el 0
+           if (br==".") {coma=0;} //Si el caracter quitado es la coma, se permite escribirla de nuevo.
+           pantalla.innerHTML=x; //mostrar resultado en pantalla
          }
 function borradoParcial() {
         pantalla.innerHTML=0; //Borrado de pantalla;
@@ -98,4 +118,11 @@ function borradoTotal() {
          coma=0; //reiniciar estado coma decimal
          ni=0 //indicador de número oculto a 0;
          op="no" //borrar operación en curso.
-         }
+       }
+function data(){
+       var d = new Date();
+
+     alert("Avui es: "+d.getDate() +" dia "+ d.getDay()+ " del mes de " +d.getMonth()
+       +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
+        + ":" +d.getSeconds());
+}

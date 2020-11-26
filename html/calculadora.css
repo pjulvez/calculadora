@@ -9,6 +9,5 @@
                  overflow: hidden;}
 
 /*botones normales: anchura y margen*/
-.calculadora [type=button] { width: 35px; padding: 0;  }
+.calculadora [type=button] { width: 35px; padding: 0; color: orange;  }
 /*botones especiales*/
-.calculadora input.largo { color: red; width: 60px; }
