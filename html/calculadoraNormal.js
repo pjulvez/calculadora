@@ -54,30 +54,7 @@ function igualar() {
             xi=1; //se puede reiniciar la pantalla.
             }
         }
-function raizc() {
-         x=Math.sqrt(x) //resolver raíz cuadrada.
-         pantalla.innerHTML=x; //mostrar en pantalla resultado
-         op="no"; //quitar operaciones pendientes.
-         xi=1; //se puede reiniciar la pantalla
-       }
-function sin() {
-          x=Math.sin(x) //resolver raíz cuadrada.
-          pantalla.innerHTML=x; //mostrar en pantalla resultado
-          op="no"; //quitar operaciones pendientes.
-          xi=1; //se puede reiniciar la pantalla
-        }
-function cos() {
-              x=Math.cos(x) //resolver raíz cuadrada.
-              pantalla.innerHTML=x; //mostrar en pantalla resultado
-              op="no"; //quitar operaciones pendientes.
-              xi=1; //se puede reiniciar la pantalla
-            }
-function exp() {
-              x=Math.exp(x) //resolver raíz cuadrada.
-              pantalla.innerHTML=x; //mostrar en pantalla resultado
-              op="no"; //quitar operaciones pendientes.
-                                    xi=1; //se puede reiniciar la pantalla
-          }
+
 function porcent() {
            x=x/100 //dividir por 100 el número
            pantalla.innerHTML=x; //mostrar en pantalla
@@ -90,14 +67,6 @@ function opuest() {
            x=String(nx); //volver a convertir a cadena
            pantalla.innerHTML=x; //mostrar en pantalla.
          }
-/*function inve() {
-           nx=Number(x);
-           nx=(1/nx);
-           x=String(nx);
-           pantalla.innerHTML=x;
-           xi=1; //reiniciar pantalla al pulsar otro número.
-         }*/
-
 
 function retro(){ //Borrar sólo el último número escrito.
            cifras=x.length; //hayar número de caracteres en pantalla
