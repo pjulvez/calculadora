@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Calculadora</title>
+
+
+    <link rel="stylesheet" type="text/css" href="calculadoraNormal.css" />
+
+  </head>
+
+  <body>
+    <script type="text/javascript" src="calculadoraNormal.js"></script>
+
+
+    <center>
+      <input type="button" class="largo" value="Data Actual" onclick="data()"/>
+      <div class="calculadora"
+        <form action="#" name="calculadora" id="calculadora">
+
+        <p id="textoPantalla">0</p>
+
+        <p>
+          <input type="button" class="largo" value="Retr" onclick="retro()"   />
+          <input type="button" class="largo" value="CE" onclick="borradoParcial()"  />
+          <input type="button" class="largo" value="C" onclick="borradoTotal()"  />
+          <input type="button" value="%" onclick="porcent()" />
+
+        </p>
+        <p>
+          <input type="button" value="7" onclick="numero(7)" />
+          <input type="button" value="8" onclick="numero('8')" />
+          <input type="button" value="9" onclick="numero('9')" />
+          <input type="button" value="/" onclick="operar('/')"  />
+        </p>
+        <p>
+          <input type="button" value="4" onclick="numero('4')" />
+          <input type="button" value="5" onclick="numero('5')" />
+          <input type="button" value="6" onclick="numero('6')" />
+          <input type="button" value="*" onclick="operar('*')" />
+        </p>
+        <p>
+          <input type="button" value="1" onclick="numero('1')" />
+          <input type="button" value="2" onclick="numero('2')" />
+          <input type="button" value="3" onclick="numero('3')" />
+          <input type="button" value="-" onclick="operar('-')" />
+        </p>
+        <p>
+          <input type="button" value="0" onclick="numero('0')" />
+          <input type="button" value="." onclick="numero('.')" />
+          <input type="button" value="+" onclick="operar('+')" />
+          <input type="button" class="largo" value="=" onclick="igualar()"  />
+        </p>
+        </form>
+      </div>
+
+      <input type="button" onclick="history.back()" name="enrere" value="tornar">
+
+
+    </center>
+  </body>
+</html>
