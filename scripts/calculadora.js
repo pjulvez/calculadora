@@ -136,3 +136,44 @@ function data(){
          +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
           + ":" +d.getSeconds());
       }
+      function guardar() {
+                          var CoordenadesX = document.getElementById("X").value;
+                          /*Guardem les dades en el sessionStorage*/
+                          sessionStorage.setItem("CoordenadesX", CoordenadesX);
+                          /* netegem els camps */
+                          document.getElementById("X").value = "";
+
+                          document.getElementById("lblX").value = "";
+
+
+                          var CoordenadesY = document.getElementById("Y").value;
+                          /*Guardem les dades en el sessionStorage*/
+                          sessionStorage.setItem("CoordenadesY", CoordenadesY);
+                          /* netegem els camps */
+                          document.getElementById("Y").value = "";
+
+                          document.getElementById("lblY").value = "";
+};
+function carregar() {
+                        var X = sessionStorage.getItem("CoordenadesX");
+                        var Y = sessionStorage.getItem("CoordenadesY");
+                        document.getElementById("lblX").innerHTML = X;
+                        document.getElementById("lblY").innerHTML = Y;
+                        if(X > 1000 || Y>1000){
+                          alert("Amb aquest valors tant alts es moura massa la calculadora");
+
+                        }
+
+                        return X + " "+ Y;
+
+
+
+}
+function moureCalculadora() {
+                          var coordenades = carregar();
+
+                          document.getElementById("calculadora2").style.position="absolute";
+                          var coords = coordenades.split(" ");
+                          document.getElementById("calculadora2").style.top=coords[0];
+                          document.getElementById("calculadora2").style.left=coords[1];
+}

@@ -129,9 +129,13 @@ function carregar() {
                   var Y = sessionStorage.getItem("CoordenadesY");
                   document.getElementById("lblX").innerHTML = X;
                   document.getElementById("lblY").innerHTML = Y;
+                  if(X > 1000 || Y>1000){
+                    alert("Amb aquest valors tant alts es moura massa la calculadora");
+
+                  }
 
                   return X + " "+ Y;
-
+                  
 
 
 }

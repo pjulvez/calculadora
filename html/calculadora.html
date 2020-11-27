@@ -14,18 +14,19 @@
 
 
     <center>
-      <input type="button" class="largo" value="Data Actual" onclick="data()"/>
+      <p><label id="lblX">X: </label><input type="number"  placeholder="Coordenades X" id="X"></p>
+      <p><label id="lblY">Y:</label> <input type="number"  placeholder="Coordenades Y" id="Y"></p>
       <div class="calculadora"
         <form action="#" name="calculadora" id="calculadora">
 
         <p id="textoPantalla">0</p>
 
         <p>
-          <input type="button" class="largo" value="Retr" onclick="esborrarUltim()"   />
-          <input type="button" class="largo" value="CE" onclick="esborratParcial()"  />
-          <input type="button" class="largo" value="C" onclick="esborratTotal()"  />
+          <input type="button"  value="Retr" onclick="esborrarUltim()"   />
+          <input type="button"  value="CE" onclick="esborratParcial()"  />
+          <input type="button"  value="C" onclick="esborratTotal()"  />
           <input type="button" value="%" onclick="percentatge()" />
-          <input type="button" class="largo" value="exp" onclick="exp()"  />
+          <input type="button"  value="exp" onclick="exp()"  />
         </p>
         <p>
           <input type="button" value="7" onclick="numero(7)" />
@@ -53,16 +54,19 @@
           <input type="button" value="+/-" onclick="opuest()" />
           <input type="button" value="." onclick="numero('.')" />
           <input type="button" value="+" onclick="operar('+')" />
-          <input type="button" class="largo" value="=" onclick="igual()"  />
+          <input type="button" value="=" onclick="igual()"  />
         </p>
         </form>
       </div>
 
-        <p><label>CoordenadesX: <input type="number" name="x"></label></p>
-        <p><label>CoordenadesY: <input type="number" name="y"></label></p>
-        <p><input type="submit" onclick="configuracio()" value="enviar dades"></p>
-    
-      <input type="button" onclick="history.back()" name="enrere" value="tornar">
+      <input type="button" class="botons" onclick="history.back()" name="enrere" value="tornar">
+      <input type="button" value="Data Actual" onclick="data()"/>
+
+        <p>
+        <button onclick="guardar()">Guardar</button>
+        <button onclick="carregar()">Carregar</button>
+        <button onclick="moureCalculadora()">Moure calculadora</button>
+        <p>
 
 
     </center>

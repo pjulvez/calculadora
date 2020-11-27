@@ -15,4 +15,12 @@ body{
   background-color:  #c3ea04;
 
 }
+input{
+  width: 150px;
+  height: : 150px;
+}
+.botons{
+  width: 70px;
+  height: : 70px;
+}
 /*botones especiales*/
