@@ -11,9 +11,18 @@ function informacio() {
 
   }
 function configuracio(){
-  sessionStorage.setItem('Nombre', 'Miguel Antonio')
+    sessionStorage.setItem('CoordenadesX', 'X');
+    sessionStorage.setItem('CoordenadesX', 'Y');
+    if (sessionStorage.getItem("autosave")) {
+  // Restaura el contenido al campo de texto
+  field.value = sessionStorage.getItem("autosave");
+}
 
-sessionStorage.Apellido = 'Márquez Montoya'
+// Espera por cambios en el campo de texto
+field.addEventListener("change", function() {
+  // Almacena el resultado en el objeto de almacenamiento de sesión
+  sessionStorage.setItem("autosave", field.value);
+});
 }
 
   }

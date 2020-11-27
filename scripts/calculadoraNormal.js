@@ -104,3 +104,24 @@ function data(){
                 +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
                  + ":" +d.getSeconds());
 }
+function configuracio(){
+    sessionStorage.setItem('CoordenadesX', 'X');
+    sessionStorage.setItem('CoordenadesX', 'Y');
+    if (sessionStorage.getItem("autosave")) {
+  // Restaura el contenido al campo de texto
+  field.value = sessionStorage.getItem("autosave");
+}
+
+// Espera por cambios en el campo de texto
+field.addEventListener("change", function() {
+  // Almacena el resultado en el objeto de almacenamiento de sesión
+  sessionStorage.setItem("autosave", field.value);
+});
+}
+
+function obtenirCoordenades( el ) {
+  var elemento = document.getElementById('id_del_elemento');
+  var posicion = elemento.getBoundingClientRect();
+
+  alert(posicion.top, posicion.right, posicion.bottom, posicion.left);
+}
