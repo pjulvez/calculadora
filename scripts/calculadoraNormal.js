@@ -104,24 +104,42 @@ function data(){
                 +  " de l'any "+d.getFullYear() + " i son les "+d.getHours()+":"+d.getMinutes()
                  + ":" +d.getSeconds());
 }
-function configuracio(){
-    sessionStorage.setItem('CoordenadesX', 'X');
-    sessionStorage.setItem('CoordenadesX', 'Y');
-    if (sessionStorage.getItem("autosave")) {
-  // Restaura el contenido al campo de texto
-  field.value = sessionStorage.getItem("autosave");
+
+function guardar() {
+                    var CoordenadesX = document.getElementById("X").value;
+                    /*Guardem les dades en el sessionStorage*/
+                    sessionStorage.setItem("CoordenadesX", CoordenadesX);
+                    /* netegem els camps */
+                    document.getElementById("X").value = "";
+
+                    document.getElementById("lblX").value = "";
+
+
+                    var CoordenadesY = document.getElementById("Y").value;
+                    /*Guardem les dades en el sessionStorage*/
+                    sessionStorage.setItem("CoordenadesY", CoordenadesY);
+                    /* netegem els camps */
+                    document.getElementById("Y").value = "";
+
+                    document.getElementById("lblY").value = "";
+              };
+
+function carregar() {
+                  var X = sessionStorage.getItem("CoordenadesX");
+                  var Y = sessionStorage.getItem("CoordenadesY");
+                  document.getElementById("lblX").innerHTML = X;
+                  document.getElementById("lblY").innerHTML = Y;
+
+                  return X + " "+ Y;
+
+
+
 }
+function moureCalculadora() {
+                    var coordenades = carregar();
 
-// Espera por cambios en el campo de texto
-field.addEventListener("change", function() {
-  // Almacena el resultado en el objeto de almacenamiento de sesión
-  sessionStorage.setItem("autosave", field.value);
-});
-}
-
-function obtenirCoordenades( el ) {
-  var elemento = document.getElementById('id_del_elemento');
-  var posicion = elemento.getBoundingClientRect();
-
-  alert(posicion.top, posicion.right, posicion.bottom, posicion.left);
+                    document.getElementById("calculadora2").style.position="absolute";
+                    var coords = coordenades.split(" ");
+                    document.getElementById("calculadora2").style.top=coords[0];
+                    document.getElementById("calculadora2").style.left=coords[1];
 }

@@ -6,34 +6,6 @@
     <link rel="stylesheet" type="text/css" href="/home/pol/Documentos/calculadora/css
 /calculadoraNormal.css" />
     <script type="text/javascript" src="/home/pol/Documentos/calculadora/scripts/calculadoraNormal.js"></script>
-    <script>
-
-function guardar() {
-                    var CoordenadesX = document.getElementById("X").value;
-                    /*Guardem les dades en el sessionStorage*/
-                    sessionStorage.setItem("CoordenadesX", CoordenadesX);
-                    /* netegem els camps */
-                    document.getElementById("X").value = "";
-
-                    document.getElementById("lblX").value = "";
-
-
-                    var CoordenadesY = document.getElementById("Y").value;
-                    /*Guardem les dades en el sessionStorage*/
-                    sessionStorage.setItem("CoordenadesY", CoordenadesY);
-                    /* netegem els camps */
-                    document.getElementById("Y").value = "";
-
-                    document.getElementById("lblY").value = "";
-              };
-
-              function carregar() {
-                  var CoordenadesX = sessionStorage.getItem("CoordenadesX");
-                  var CoordenadesY = sessionStorage.getItem("CoordenadesY");
-                  document.getElementById("lblX").innerHTML = CoordenadesX;
-                  document.getElementById("lblY").innerHTML = CoordenadesY;
-              }
-</script>
 
 
   </head>
@@ -45,7 +17,7 @@ function guardar() {
     <center>
       <input type="button" class="largo" value="Data Actual" onclick="data()"/>
       <div class="calculadora"
-        <form action="#" name="calculadora" id="calculadora">
+        <form action="#" name="calculadora" class="form" id="calculadora2" translate=(lblX,lblY)>
 
         <p id="textoPantalla">0</p>
 
@@ -83,17 +55,15 @@ function guardar() {
         </form>
       </div>
 
-
-      <p><input type="submit" onclick="configuracio()" value="enviar dades"></p>
-
       <input type="button" onclick="history.back()" name="enrere" value="tornar">
-      <p><label>CoordenadesX: <input type="text"  placeholder="Coordenades X" id="X"><br /></p>
-      <p><label>CoordenadesY: <input type="text"  placeholder="Coordenades Y" id="Y"><br /></p>
+      <p><label>CoordenadesX: <input type="number"  placeholder="Coordenades X" id="X"><br /></p>
+      <p><label>CoordenadesY: <input type="number"  placeholder="Coordenades Y" id="Y"><br /></p>
       <p>  CoordenadesX: <label id="lblX"></label><br/></p>
       <p>  CoordenadesY: <label id="lblY"></label><br/></p>
 
         <button onclick="guardar()">Guardar</button>
         <button onclick="carregar()">Carregar</button>
+          <button onclick="moureCalculadora()">Moure calculadora</button>
 
 
 
