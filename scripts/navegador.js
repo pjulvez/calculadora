@@ -10,6 +10,10 @@ function informacio() {
         alert("El navegador que se está utilizando es Firefox"  + navigator.appVersion + "\n" +document.lastModifyed+"\n" +navigator.userAgent +"\n"+ window.location.pathname + "\n" + navigator.language);
 
   }
+function configuracio(){
+  sessionStorage.setItem('Nombre', 'Miguel Antonio')
 
+sessionStorage.Apellido = 'Márquez Montoya'
+}
 
   }
