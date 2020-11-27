@@ -7,26 +7,34 @@
 /calculadoraNormal.css" />
     <script type="text/javascript" src="/home/pol/Documentos/calculadora/scripts/calculadoraNormal.js"></script>
     <script>
-    var elemento = document.getElementById('calculadora');
-    if (sessionStorage.getItem("autosave")) {
-  // Restaura el contenido al campo de texto
-  field.value = sessionStorage.getItem("autosave");
-}
 
-// Espera por cambios en el campo de texto
-field.addEventListener("change", function() {
-  // Almacena el resultado en el objeto de almacenamiento de sesión
-  sessionStorage.setItem("autosave", field.value);
-});
-    }
+function guardar() {
+                    var CoordenadesX = document.getElementById("X").value;
+                    /*Guardem les dades en el sessionStorage*/
+                    sessionStorage.setItem("CoordenadesX", CoordenadesX);
+                    /* netegem els camps */
+                    document.getElementById("X").value = "";
 
-    // Espera por cambios en el campo de texto
-    field.addEventListener("change", function() {
-      // Almacena el resultado en el objeto de almacenamiento de sesión
-      sessionStorage.setItem("autosave", field.value);
-    });
-    }
-    </script>
+                    document.getElementById("lblX").value = "";
+
+
+                    var CoordenadesY = document.getElementById("Y").value;
+                    /*Guardem les dades en el sessionStorage*/
+                    sessionStorage.setItem("CoordenadesY", CoordenadesY);
+                    /* netegem els camps */
+                    document.getElementById("Y").value = "";
+
+                    document.getElementById("lblY").value = "";
+              };
+
+              function carregar() {
+                  var CoordenadesX = sessionStorage.getItem("CoordenadesX");
+                  var CoordenadesY = sessionStorage.getItem("CoordenadesY");
+                  document.getElementById("lblX").innerHTML = CoordenadesX;
+                  document.getElementById("lblY").innerHTML = CoordenadesY;
+              }
+</script>
+
 
   </head>
 
@@ -74,15 +82,20 @@ field.addEventListener("change", function() {
         </p>
         </form>
       </div>
-      <p><label>CoordenadesX: <input type="number" name="x"></label></p>
-      <p><label>CoordenadesY: <input type="number" name="y"></label></p>
-      <p><input type="submit" onclick="configuracio()" value="enviar dades"></p>
-        <p><input type="submit" onclick="obtenirCoordenades()" value="Coordenades"></p>
 
+
+      <p><input type="submit" onclick="configuracio()" value="enviar dades"></p>
 
       <input type="button" onclick="history.back()" name="enrere" value="tornar">
+      <p><label>CoordenadesX: <input type="text"  placeholder="Coordenades X" id="X"><br /></p>
+      <p><label>CoordenadesY: <input type="text"  placeholder="Coordenades Y" id="Y"><br /></p>
+      <p>  CoordenadesX: <label id="lblX"></label><br/></p>
+      <p>  CoordenadesY: <label id="lblY"></label><br/></p>
+
+        <button onclick="guardar()">Guardar</button>
+        <button onclick="carregar()">Carregar</button>
 
 
-    </center>
-  </body>
+
+</body>
 </html>
